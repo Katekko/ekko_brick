@@ -1,6 +1,6 @@
 name: ekko_brick
 description: Boirlerplate for clean architeture using less libraries
-repository: https://github.com/Katekko/ekko_brick/tree/main/ekko_brick
+repository: https://github.com/Katekko/ekko_brick
 
 version: 0.1.1
 
