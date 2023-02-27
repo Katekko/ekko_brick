@@ -1,6 +1,6 @@
 class Environments {
   static const String production = 'prod';
-  static const String homolog = 'homolog';
+  static const String staging = 'staging';
   static const String develop = 'dev';
   static const String local = 'local';
 }
@@ -17,7 +17,7 @@ class ConfigEnvironments {
       'url': '',
     },
     {
-      'env': Environments.homolog,
+      'env': Environments.staging,
       'url': '',
     },
     {

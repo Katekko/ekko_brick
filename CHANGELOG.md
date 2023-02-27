@@ -1,3 +1,9 @@
+# 0.1.3
+
+- Removing analysis_options rule
+- Fix config.dart
+
+
 # 0.1.2
 
 - Fixing repository from brick.yaml
