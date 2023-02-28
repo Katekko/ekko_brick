@@ -1,6 +1,6 @@
 # Ekko Brick
 
-A brick to create a boirlerplate for clean architeture using less libraries.
+A brick to create boilerplate for clean architecture using fewer libraries.
 
 ## How to use 🚀
 
