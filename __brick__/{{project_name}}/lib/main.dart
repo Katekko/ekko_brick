@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:japango/initializer.dart';
 
 import 'config.dart';
 import 'core/navigation/navigation.dart';
 import 'core/navigation/routes.dart';
+import 'initializer.dart';
 
 void main() async {
   Initializer.init();

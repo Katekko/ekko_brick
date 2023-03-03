@@ -1,6 +1,8 @@
 import 'dart:async';
+
 import 'package:get_it/get_it.dart';
-import 'package:japango/core/abstractions/controller.interface.dart';
+
+import 'abstractions/controller.interface.dart';
 
 class Inject {
   Inject._();

@@ -1,4 +1,4 @@
-name: japango
+name: {{project_name.snackCase()}}
 description: A new Flutter project.
 
 publish_to: 'none' 
