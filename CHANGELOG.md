@@ -1,3 +1,8 @@
+# 0.1.4
+
+- Fix imports with the correct projects name
+
+
 # 0.1.3
 
 - Removing analysis_options rule
