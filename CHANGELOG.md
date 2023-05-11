@@ -1,3 +1,10 @@
+# 0.1.5
+
+- Adding new function for clear the error in react field
+    Call ```<fieldName>.clearError();``` to clear the error
+
+
+
 # 0.1.4
 
 - Fix imports with the correct projects name
