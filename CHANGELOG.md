@@ -1,8 +1,13 @@
+# 0.2.0
+
+WARNING
+- Fixing pubspec to use the last dart possible
+
+
 # 0.1.5
 
 - Adding new function for clear the error in react field
     Call ```<fieldName>.clearError();``` to clear the error
-
 
 
 # 0.1.4

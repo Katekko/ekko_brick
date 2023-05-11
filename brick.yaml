@@ -2,7 +2,7 @@ name: ekko_brick
 description: Boilerplate for clean architecture using fewer libraries
 repository: https://github.com/Katekko/ekko_brick
 
-version: 0.1.6
+version: 0.1.7
 
 environment:
   mason: ">=0.1.0-dev.42 <0.1.0"
