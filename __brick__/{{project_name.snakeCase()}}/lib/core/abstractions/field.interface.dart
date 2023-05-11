@@ -8,15 +8,11 @@ abstract class IField<T> extends IValidator<T> {
   Stream<String?> get errorStream;
   late final TextEditingController controller;
 
-  void Function(T? val)? onChangeCallback;
+  IField({required super.validators, required this.controller});
 
   void onChange(String val);
-
-  IField({
-    required super.validators,
-    required this.controller,
-  });
-
+  void Function(T? val)? onChangeCallback;
+  void clearError();
   void dispose();
 
   @override
