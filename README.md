@@ -5,7 +5,7 @@ A brick to create boilerplate for clean architecture using fewer libraries.
 ## How to use 🚀
 
 ```
-mason make ekko_brick --project_name katekko --project_version 3.7.5
+mason make ekko_brick --project_name katekko --project_version 3.10.0
 ```
 
 ## Variables ✨
@@ -13,10 +13,11 @@ mason make ekko_brick --project_name katekko --project_version 3.7.5
 | Variable           | Description                     | Default | Type      | Conditional | When             |
 | ------------------ | ------------------------------- | ------- | --------- | ----------- | ---------------- |
 | `project_name`     | The name of the project         | example | `string`  | false       | N/A              |
-| `project_version`  | The project version             | 3.7.5   | `string`  | false       | N/A              |
+| `project_version`  | The project version             | 3.10.0  | `string`  | false       | N/A              |
 
 ## How to initialize your project after brick 📦
 
+- git init
 - Install the [FVM](https://fvm.app/docs/getting_started/installation), it's a CLI for controll the flutter versions from your computer 
 - Type `fvm use`
 - Type `fvm flutter create .`
