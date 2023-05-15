@@ -1,5 +1,8 @@
 # 0.2.0
 
+- Fixing home controller position
+- Fixing initial route
+
 WARNING
 - Fixing pubspec to use the last dart possible
 
