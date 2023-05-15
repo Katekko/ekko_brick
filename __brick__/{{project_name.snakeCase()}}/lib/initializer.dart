@@ -6,6 +6,8 @@ import 'features/shared/loading/loading.controller.dart';
 import 'features/shared/loading/loading.interface.dart';
 
 class Initializer {
+  static late final String initialRoute;
+
   static Future<void> init() async {
     try {
       WidgetsFlutterBinding.ensureInitialized();

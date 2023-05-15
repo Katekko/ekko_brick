@@ -5,7 +5,7 @@ repository: https://github.com/Katekko/ekko_brick
 version: 0.1.7
 
 environment:
-  mason: ">=0.1.0-dev.42 <0.1.0"
+  mason: ">=0.1.0-dev.49 <0.1.0"
 
 vars:
   project_name:

@@ -7,7 +7,7 @@ import 'initializer.dart';
 
 void main() async {
   Initializer.init();
-  final initialRoute = await Routes.initialRoute;
+  Initializer.initialRoute = await Routes.initialRoute;
   runApp(MyApp(initialRoute: initialRoute));
 }
 
