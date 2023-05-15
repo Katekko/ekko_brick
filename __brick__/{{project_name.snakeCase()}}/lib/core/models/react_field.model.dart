@@ -6,10 +6,14 @@ class ReactFieldModel<T> extends IField<T> {
   T? _value;
   final _error = BehaviorSubject<String?>();
 
+  var firstTimeAux = true;
+  final bool validateOnType;
+
   ReactFieldModel({
     T? value,
     required super.validators,
     required super.controller,
+    this.validateOnType = true,
   }) : _value = value {
     controller.addListener(() => onChange(controller.text));
   }
@@ -40,13 +44,18 @@ class ReactFieldModel<T> extends IField<T> {
         final onlyNumber = val.replaceAll(RegExp('[^0-9.]'), '');
         parse = num.tryParse(onlyNumber);
         _value = parse;
+        firstTimeAux = false;
       } else if (runtimeType == ReactFieldModel<String>) {
         _value = val as T;
+        if (val == '') {
+          controller.text = val;
+        } else {
+          firstTimeAux = false;
+        }
       }
-      if (val == '') controller.text = val;
     }
 
-    validate();
+    if (!firstTimeAux && validateOnType) validate();
     onChangeCallback?.call(_value);
   }
 
