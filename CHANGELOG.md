@@ -1,3 +1,9 @@
+# 0.3.0
+
+- Fixing home screen import and home binding
+- Fixing initial route in main
+- Changing data for data access layer (DAL)
+
 # 0.2.0
 
 - Fixing home controller position

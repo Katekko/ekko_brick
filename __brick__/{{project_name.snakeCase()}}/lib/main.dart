@@ -8,12 +8,11 @@ import 'initializer.dart';
 void main() async {
   Initializer.init();
   Initializer.initialRoute = await Routes.initialRoute;
-  runApp(MyApp(initialRoute: initialRoute));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final String initialRoute;
-  const MyApp({super.key, required this.initialRoute});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

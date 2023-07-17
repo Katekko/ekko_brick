@@ -1,4 +1,4 @@
-import '../domain/abstractions/controllers/home_controller.interface.dart';
+import '../domain/bindings/home_controller.interface.dart';
 
 class HomeController implements IHomeController {
   const HomeController();

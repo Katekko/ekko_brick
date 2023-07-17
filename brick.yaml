@@ -2,7 +2,7 @@ name: ekko_brick
 description: Boilerplate for clean architecture using fewer libraries
 repository: https://github.com/Katekko/ekko_brick
 
-version: 0.2.0
+version: 0.3.0
 
 environment:
   mason: ">=0.1.0-dev.49 <0.1.0"
@@ -17,5 +17,5 @@ vars:
   project_version:
     type: string
     description: The version of the flutter project
-    default: 3.10.0
+    default: 3.10.6
     prompt: What is the flutter version?

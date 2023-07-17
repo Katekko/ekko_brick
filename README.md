@@ -24,4 +24,4 @@ mason make ekko_brick --project_name katekko --project_version 3.10.0
 - Now just start the project:
 - `fvm flutter run -d {windows/mac/chrome/android/ios}`
 
-For further informations about the architecture itself you will need to wait for my tutorial in the future or call me on my discord ```Katekko#1429```.
+For further informations about the architecture itself you will need to wait for my tutorial in the future or call me on my discord ```Katekko```.
