@@ -11,9 +11,9 @@ class Routes {
 
       final isUserLoggedIn = await authRepository.isLoggedIn();
       if (isUserLoggedIn) return home;
-      return landing;
+      return login;
     } catch (err) {
-      return landing;
+      return login;
     }
   }
 

@@ -3,33 +3,33 @@ import 'contexts/home_screen.strings.dart';
 import 'contexts/validators.strings.dart';
 import 'translation.dart';
 
-class PtBrStringsTranslations implements StringsTranslations {
-  static const String getLocale = 'pt-BR';
+class EnUsStringsTranslations implements StringsTranslations {
+  static const String getLocale = 'en-US';
 
   static const title = 'Ekko Brick';
 
   final login = LoginScreenStrings(
     title: title,
     userNameLabel: 'E-mail',
-    passwordLabel: 'Senha',
-    loginButtonLabel: 'Entrar',
+    passwordLabel: 'Password',
+    loginButtonLabel: 'Join',
   );
 
   final home = HomeScreenStrings(
     title: title,
     logoutDialog: HomeLogoutDialogStrings(
-      title: 'Você tem certeza?',
-      content: 'Você deseja sair do app?',
-      buttonNo: 'NÃO',
-      buttonYes: 'SIM',
+      title: 'Are you sure?',
+      content: 'Do you wanna logout?',
+      buttonNo: 'NO',
+      buttonYes: 'YES',
     ),
   );
 
   final validators = ValidatorsStrings(
-    emailIsInvalid: 'Formato de email inválido',
-    emailIsRequired: 'Email é obrigatório',
-    invalidPassword: 'Senha inválida: Pelo menos 6 caracteres',
-    required: 'Campo é obrigatório',
+    emailIsInvalid: 'Email is invalid',
+    emailIsRequired: 'Email is required',
+    invalidPassword: 'Password invalid: At least 6 characters',
+    required: 'Field is required',
   );
 
   @override

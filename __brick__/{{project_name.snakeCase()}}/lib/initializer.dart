@@ -11,6 +11,7 @@ import 'core/base/inject.dart';
 import 'core/base/models/http_connect.dart';
 import 'core/base/models/token_client.dart';
 import 'core/i18n/pt_br.dart';
+import 'core/i18n/en_us.dart';
 import 'core/i18n/translation.dart';
 import 'core/resources/user/dal/datasource/user.datasource.interface.dart';
 import 'core/resources/user/dal/datasource/user.datasource.mock.dart';
@@ -65,6 +66,8 @@ class Initializer {
       switch (locale) {
         case PtBrStringsTranslations.getLocale:
           return PtBrStringsTranslations();
+        case EnUsStringsTranslations.getLocale:
+          return EnUsStringsTranslations();
         default:
           return PtBrStringsTranslations();
       }
@@ -81,7 +84,7 @@ class Initializer {
       if (currentLocale != null) {
         i18n = getCurrentI18n(currentLocale);
       } else {
-        i18n = PtBrStringsTranslations();
+        i18n = EnUsStringsTranslations();
       }
     }
 

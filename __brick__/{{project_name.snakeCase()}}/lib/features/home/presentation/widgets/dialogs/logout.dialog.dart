@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/i18n/translation.dart';
+
 class LogoutDialog extends StatelessWidget {
   final void Function() onPressedYes;
-  const LogoutDialog({super.key, required this.onPressedYes});
+  final StringsTranslations i18n;
+  const LogoutDialog({
+    super.key,
+    required this.onPressedYes,
+    required this.i18n,
+  });
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('Você tem certeza?'),
-      content: const Text('Você deseja sair do app?'),
+      title: Text(i18n.strings.home.logoutDialog.title),
+      content: Text(i18n.strings.home.logoutDialog.content),
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: const Text('NÃO'),
+          child: Text(i18n.strings.home.logoutDialog.buttonNo),
         ),
         TextButton(
           onPressed: onPressedYes,
-          child: const Text('SIM'),
+          child: Text(i18n.strings.home.logoutDialog.buttonYes),
         ),
       ],
     );

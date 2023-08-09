@@ -35,4 +35,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/mocks/auth/
+    - assets/mocks/user/

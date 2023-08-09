@@ -38,9 +38,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         appBar: AppBar(
           backgroundColor: Colors.black,
-          title: const Text('Ekko Brick'),
+          title: Text(widget.i18n.strings.home.title),
         ),
-        body: const Center(child: Text('Ekko Brick')),
+        body: Center(child: Text(widget.i18n.strings.home.title)),
       ),
     );
   }
@@ -49,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
     showDialog(
       context: context,
       builder: (_) => LogoutDialog(
+        i18n: widget.i18n,
         onPressedYes: () {
           widget.controller.logout();
           context.goNamed(Routes.login);
