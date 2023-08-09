@@ -5,7 +5,7 @@ import '../../core/base/inject.dart';
 
 abstract class ViewStateController<T extends Object> extends StatefulWidget {
   T get controller => Inject.find<T>();
-  StringsTranslations get translations => Inject.find<StringsTranslations>();
+  StringsTranslations get i18n => Inject.find<StringsTranslations>();
 
   const ViewStateController({super.key});
 

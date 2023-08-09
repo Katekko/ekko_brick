@@ -6,7 +6,7 @@ import 'core/navigation/routes.dart';
 import 'initializer.dart';
 
 void main() async {
-  Initializer.init();
+  await Initializer.init();
   Initializer.initialRoute = await Routes.initialRoute;
   runApp(const MyApp());
 }

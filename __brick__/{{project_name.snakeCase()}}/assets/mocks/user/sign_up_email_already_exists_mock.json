@@ -1,0 +1,8 @@
+{
+    "errors": [
+        {
+            "id": "Email",
+            "message": "Email already in use"
+        }
+    ]
+}

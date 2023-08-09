@@ -1,0 +1,9 @@
+{
+    "data": {
+        "user": {
+            "id": 123,
+            "email": "katekko@gmail.com"
+        },
+        "token": "token123"
+    }
+}
