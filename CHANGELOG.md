@@ -1,3 +1,34 @@
+# 1.0.0
+
+Welcome to version 1.0.0 of our project! In this update, we've made significant enhancements and additions to provide you with a strong foundation for your Minimum Viable Product (MVP) development. Here's a detailed overview of the changes and features introduced in this release:
+
+## What's New
+
+### Architecture Overhaul
+We've completely revamped the architecture to ensure a more streamlined and maintainable codebase. This update lays the groundwork for a scalable and efficient project structure, making it easier to expand and evolve the application as your needs grow.
+
+### Introducing REST Integration and Mocks
+Version 1.0.0 brings the power of RESTful API integration to the table. You can now seamlessly communicate with backend services using REST endpoints. To facilitate testing and development, we've also included mock data support, allowing you to simulate responses from the backend without requiring a live connection.
+
+### Example: Login and Home Functionality
+We understand the importance of having practical examples to kickstart your development journey. That's why we've included a comprehensive example showcasing the implementation of a login mechanism and a home screen. This example will serve as a guide to help you integrate these essential features into your own project effortlessly.
+
+### Navigation Enhancement
+Smooth navigation is key to providing a user-friendly experience. With this update, we've incorporated navigation functionalities that make it easy to move between different screens within your application. This enhancement ensures a coherent flow for your users, enhancing overall usability.
+
+### Persistent Login State
+Security and user experience go hand in hand. We've implemented a mechanism to maintain the user's login state even after the app is closed or refreshed. This means users won't need to log in repeatedly, enhancing convenience without compromising security.
+
+### Foundational Features
+In this version, we've included a set of foundational features that are crucial for any MVP development:
+
+- **Internationalization (i18n)**: Your application can now be easily adapted for different languages and regions. The i18n support allows you to reach a wider audience by providing a localized experience.
+
+- **Clean Architecture**: We've designed the architecture with cleanliness and modularity in mind. This ensures that your codebase remains organized, maintainable, and easily extensible as your project evolves.
+
+- **Enhanced Input Handling**: To simplify input handling, we've introduced custom components: ReactField and TextReactField. These components make creating and managing user inputs a breeze, saving you time and effort during development.
+
+
 # 0.3.0
 
 - Fixing home screen import and home binding
