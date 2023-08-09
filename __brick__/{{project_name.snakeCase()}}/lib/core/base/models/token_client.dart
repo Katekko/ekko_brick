@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:http/http.dart' as http;
 
-import '../../domains/user/domain/constants/user_storage.constants.dart';
+import '../../resources/user/domain/constants/user_storage.constants.dart';
 import '../dal/storage/storage.interface.dart';
 
 class TokenClient extends http.BaseClient {

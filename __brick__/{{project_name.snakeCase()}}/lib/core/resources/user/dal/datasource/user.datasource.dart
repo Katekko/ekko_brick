@@ -1,6 +1,6 @@
 import '../../../../base/abstractions/http_connect.interface.dart';
 import '../../../../base/exceptions/http_failure.exception.dart';
-import '../../domain/constants/errors.constants.dart';
+import '../../domain/constants/user_errors.constants.dart';
 import '../../domain/exceptions/email_already_in_use.exception.dart';
 import '../../domain/exceptions/user_or_password_incorrect.exception.dart';
 import '../dto/authenticate_user.body.dart';
@@ -27,8 +27,8 @@ class UserDatasource implements IUserDatasource {
       return response.payload!.data!;
     } on HttpFailureException<AuthenticateUserResponse> catch (err) {
       final error = err.object.errors!.first;
-      if (error.id == ErrosConstants.email ||
-          error.id == ErrosConstants.password) {
+      if (error.id == UserErrosConstants.email ||
+          error.id == UserErrosConstants.password) {
         throw UserOrPasswordIncorrectException(failure: error);
       }
 
@@ -48,7 +48,7 @@ class UserDatasource implements IUserDatasource {
       return response.payload!;
     } on HttpFailureException<SignUpResponse> catch (err) {
       final error = err.object.errors!.first;
-      if (error.id == ErrosConstants.email) {
+      if (error.id == UserErrosConstants.email) {
         throw EmailAlreadyInUseException(failure: error);
       }
 

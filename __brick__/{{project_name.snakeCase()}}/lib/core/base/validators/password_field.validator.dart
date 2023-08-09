@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 
 import '../../i18n/translation.dart';
-import '../../inject.dart';
 import '../abstractions/validators/field_validator.interface.dart';
+import '../inject.dart';
 
 class PasswordFieldValidator<T> extends Equatable
     implements IFieldValidator<T> {
