@@ -1,9 +1,9 @@
 import 'package:go_router/go_router.dart';
 
-import '../../features/home/presentation/home.screen.dart';
+import '../../features/bindings.dart';
+import '../../features/screens.dart';
 import '../utils/provider.util.dart';
 import '../../initializer.dart';
-import '../../features/home/domain/bindings/home_controller.binding.dart';
 import 'routes.dart';
 
 class Navigation {
@@ -11,6 +11,15 @@ class Navigation {
     initialLocation: Initializer.initialRoute,
     debugLogDiagnostics: true,
     routes: [
+      GoRoute(
+        path: Routes.login,
+        name: Routes.login,
+        builder: (context, state) => EntryProvider(
+          onBuild: (_) => const LoginScreen(),
+          onInit: (_) => LoginControllerBinding.inject(),
+          onDispose: (_) => LoginControllerBinding.dipose(),
+        ),
+      ),
       GoRoute(
         path: Routes.home,
         name: Routes.home,
