@@ -5,7 +5,11 @@ A brick to create boilerplate for clean architecture using fewer libraries.
 ## How to use 🚀
 
 ```
-mason make ekko_brick --project_name katekko --project_version 3.10.0
+mason ad ekko_brick -g
+```
+
+```
+mason make ekko_brick --project_name katekko --project_version 3.10.6
 ```
 
 ## Variables ✨
