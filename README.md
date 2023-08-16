@@ -28,6 +28,8 @@ mason make ekko_brick --project_name katekko --project_version 3.10.6
 - Now just start the project:
 - `fvm flutter run -d {windows/mac/chrome/android/ios}`
 
+If you need more help to use, see this video: [Youtube](https://www.youtube.com/watch?v=CeuuwlpNUs4&ab_channel=Katekko) (only in pt_BR)
+
 ## How to make changes in the brick and use locally 📦
 
 - First create a temp folder inside the brick / `mkdir temp && cd temp`
