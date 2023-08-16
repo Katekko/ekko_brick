@@ -5,7 +5,7 @@ A brick to create boilerplate for clean architecture using fewer libraries.
 ## How to use 🚀
 
 ```
-mason ad ekko_brick -g
+mason add ekko_brick -g
 ```
 
 ```
