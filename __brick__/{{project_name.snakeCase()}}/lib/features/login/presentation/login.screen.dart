@@ -95,7 +95,7 @@ class LoginScreen extends ViewController<ILoginController> {
       await controller.authenticateUser();
       if (context.mounted) context.goNamed(Routes.home);
     } on UserOrPasswordIncorrectException catch (err) {
-      showErrorSnackbar(context: context, err: err);
+      if (context.mounted) showErrorSnackbar(context: context, err: err);
     }
   }
 }
