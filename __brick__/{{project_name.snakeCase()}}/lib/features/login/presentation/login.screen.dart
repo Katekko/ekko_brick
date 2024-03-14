@@ -92,8 +92,8 @@ class LoginScreen extends ViewController<LoginController> {
   void authenticateUser(BuildContext context) async {
     try {
       FocusScope.of(context).unfocus();
-      await controller.authenticateUser();
-      if (context.mounted) context.goNamed(Routes.home);
+      final success = await controller.authenticateUser();
+      if (context.mounted && success) context.goNamed(Routes.home);
     } on UserOrPasswordIncorrectException catch (err) {
       if (context.mounted) showErrorSnackbar(context: context, err: err);
     }

@@ -17,7 +17,7 @@ class LoginController implements IController {
   })  : _authenticateUserUsecase = authenticateUserUsecase,
         _loading = loading;
 
-  Future<void> authenticateUser() async {
+  Future<bool> authenticateUser() async {
     try {
       _loading.isLoading = true;
       if (_validateFields) {
@@ -25,7 +25,11 @@ class LoginController implements IController {
           login: loginField.valueNotifier.value!,
           password: passwordField.valueNotifier.value!,
         );
+
+        return true;
       }
+
+      return false;
     } finally {
       _loading.isLoading = false;
     }
