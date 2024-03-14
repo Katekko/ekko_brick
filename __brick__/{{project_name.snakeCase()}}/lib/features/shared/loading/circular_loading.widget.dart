@@ -12,8 +12,8 @@ class CircularLoadingWidget extends ViewController<ILoadingController> {
       stream: controller.isLoadingStream,
       builder: (_, loadingSnap) {
         if (loadingSnap.hasData && loadingSnap.data!) {
-          return WillPopScope(
-            onWillPop: () => Future.value(false),
+          return PopScope(
+            canPop: false,
             child: Stack(
               children: <Widget>[
                 ModalBarrier(

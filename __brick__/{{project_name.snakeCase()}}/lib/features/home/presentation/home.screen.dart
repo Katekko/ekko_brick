@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(onPressed: logout, child: const Text('Sair')),
-              )
+              ),
             ],
           ),
         ),
