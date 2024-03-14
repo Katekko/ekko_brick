@@ -9,9 +9,9 @@ import '../../shared/loading/loading.widget.dart';
 import '../../shared/primary_button.widget.dart';
 import '../../shared/text_field.widget.dart';
 import '../../shared/view_controller.interface.dart';
-import '../binding/login_controller.interface.dart';
+import 'login.controller.dart';
 
-class LoginScreen extends ViewController<ILoginController> {
+class LoginScreen extends ViewController<LoginController> {
   const LoginScreen({super.key});
 
   @override

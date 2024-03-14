@@ -7,29 +7,28 @@ import '../../../core/resources/user/dal/user.repository.dart';
 import '../../../core/base/inject.dart';
 import '../presentation/login.controller.dart';
 import '../usecases/authenticate_user.usecase.dart';
-import 'login_controller.interface.dart';
 
 class LoginControllerBinding {
   static void inject() {
-    Inject.injectController<ILoginController>(makeLoginController);
+    Inject.injectController<LoginController>(makeLoginController);
   }
 
   static void dipose() {
-    Inject.disposeController<ILoginController>();
+    Inject.disposeController<LoginController>();
   }
 }
 
-ILoginController makeLoginController() {
+LoginController makeLoginController() {
   final storage = Inject.find<IStorage>();
   final authDatasource = Inject.find<IUserDatasource>();
 
-  final loginRepository = UserRepository(
+  final userRepository = UserRepository(
     storage: storage,
     userDatasource: authDatasource,
   );
 
   final authenticateUserUsecase = AuthenticateUserUsecase(
-    loginRepository: loginRepository,
+    loginRepository: userRepository,
   );
 
   return LoginController(
