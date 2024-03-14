@@ -5,14 +5,14 @@ import '../../../core/base/style/colors.dart';
 import '../../../core/navigation/routes.dart';
 import '../../shared/loading/loading.widget.dart';
 import '../../shared/view_controller.interface.dart';
-import '../bindings/home_controller.interface.dart';
+import 'home.controller.dart';
 import 'widgets/dialogs/logout.dialog.dart';
 
-class HomeScreen extends ViewStateController<IHomeController> {
+class HomeScreen extends ViewStateController<HomeController> {
   const HomeScreen({super.key});
 
   @override
-  State<ViewStateController<IHomeController>> createState() {
+  State<ViewStateController<HomeController>> createState() {
     return _HomeScreenState();
   }
 }

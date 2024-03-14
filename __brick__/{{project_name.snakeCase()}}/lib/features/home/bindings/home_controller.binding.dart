@@ -2,19 +2,18 @@ import '../../../core/base/inject.dart';
 import '../../../core/resources/user/dal/user.repository.dart';
 import '../presentation/home.controller.dart';
 import '../usecases/logout.usecase.dart';
-import 'home_controller.interface.dart';
 
 class HomeControllerBinding {
   static void inject() {
-    Inject.injectController<IHomeController>(makeHomeController);
+    Inject.injectController<HomeController>(makeHomeController);
   }
 
   static void dipose() {
-    Inject.disposeController<IHomeController>();
+    Inject.disposeController<HomeController>();
   }
 }
 
-IHomeController makeHomeController() {
+HomeController makeHomeController() {
   final userRepository = UserRepository(
     userDatasource: Inject.find(),
     storage: Inject.find(),
