@@ -1,12 +1,12 @@
-import '../../domain/models/user.model.dart';
+import '../../domain/entities/user.entity.dart';
 import '../data/user.data.dart';
 
 abstract class UserMapper {
-  static UserModel toModel(UserData data) {
-    return UserModel(id: data.id, email: data.email);
+  static User toModel(UserData data) {
+    return User(id: data.id, email: data.email);
   }
 
-  static Map<String, dynamic> toJson(UserModel model) {
+  static Map<String, dynamic> toJson(User model) {
     return {'id': model.id, 'email': model.email};
   }
 }

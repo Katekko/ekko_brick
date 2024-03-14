@@ -1,6 +1,6 @@
 import '../../../base/dal/storage/storage.interface.dart';
 import '../domain/constants/user_storage.constants.dart';
-import '../domain/models/user.model.dart';
+import '../domain/entities/user.entity.dart';
 import '../domain/user_repository.interface.dart';
 import 'datasource/user.datasource.interface.dart';
 import 'dto/authenticate_user.body.dart';
@@ -13,7 +13,7 @@ class UserRepository implements IUserRepository {
   const UserRepository({required this.userDatasource, required this.storage});
 
   @override
-  Future<({UserModel user, String token})> authenticate({
+  Future<({User user, String token})> authenticate({
     required String login,
     required String password,
   }) async {
@@ -24,7 +24,7 @@ class UserRepository implements IUserRepository {
   }
 
   @override
-  Future<void> save(UserModel user) async {
+  Future<void> save(User user) async {
     final json = UserMapper.toJson(user);
     await storage.write(key: UserStorageConstants.user, value: json);
   }

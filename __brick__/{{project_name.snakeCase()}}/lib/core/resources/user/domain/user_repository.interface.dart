@@ -1,12 +1,12 @@
-import 'models/user.model.dart';
+import 'entities/user.entity.dart';
 
 abstract class IUserRepository {
-  Future<({UserModel user, String token})> authenticate({
+  Future<({User user, String token})> authenticate({
     required String login,
     required String password,
   });
 
-  Future<void> save(UserModel user);
+  Future<void> save(User user);
 
   Future<void> saveToken(String token);
 
