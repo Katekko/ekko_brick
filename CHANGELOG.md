@@ -1,3 +1,11 @@
+# 1.0.1
+- Updating to flutter 3.19.3
+- Passing loading dependency to controller interface
+- Fixing login flow
+- Fixing lint problems
+- Fix async context and typo
+- Refactor user to entity
+
 # 1.0.0
 
 Welcome to version 1.0.0 of our project! In this update, we've made significant enhancements and additions to provide you with a strong foundation for your Minimum Viable Product (MVP) development. Here's a detailed overview of the changes and features introduced in this release:
