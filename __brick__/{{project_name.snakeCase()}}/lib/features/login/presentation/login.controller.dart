@@ -1,25 +1,21 @@
 import '../../../../core/base/abstractions/field.interface.dart';
 import '../../../core/base/abstractions/controller.interface.dart';
-import '../../shared/loading/loading.interface.dart';
 import '../usecases/authenticate_user.usecase.dart';
 
-class LoginController implements IController {
+class LoginController extends IController {
   final AuthenticateUserUsecase _authenticateUserUsecase;
   final IField<String> loginField;
   final IField<String> passwordField;
-  final ILoadingController _loading;
 
   LoginController({
     required this.loginField,
     required this.passwordField,
     required AuthenticateUserUsecase authenticateUserUsecase,
-    required ILoadingController loading,
-  })  : _authenticateUserUsecase = authenticateUserUsecase,
-        _loading = loading;
+  }) : _authenticateUserUsecase = authenticateUserUsecase;
 
   Future<bool> authenticateUser() async {
     try {
-      _loading.isLoading = true;
+      loading.isLoading = true;
       if (_validateFields) {
         await _authenticateUserUsecase(
           login: loginField.valueNotifier.value!,
@@ -31,7 +27,7 @@ class LoginController implements IController {
 
       return false;
     } finally {
-      _loading.isLoading = false;
+      loading.isLoading = false;
     }
   }
 

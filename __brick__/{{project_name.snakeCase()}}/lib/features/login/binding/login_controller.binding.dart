@@ -28,14 +28,13 @@ LoginController makeLoginController() {
   );
 
   final authenticateUserUsecase = AuthenticateUserUsecase(
-    loginRepository: userRepository,
+    userRepository: userRepository,
   );
 
   return LoginController(
     loginField: makeLoginField(),
     passwordField: makePasswordField(),
     authenticateUserUsecase: authenticateUserUsecase,
-    loading: Inject.find(),
   );
 }
 

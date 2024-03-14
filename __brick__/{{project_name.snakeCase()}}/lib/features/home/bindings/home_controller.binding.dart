@@ -21,8 +21,5 @@ HomeController makeHomeController() {
 
   final logoutUsecase = LogoutUsecase(userRepository: userRepository);
 
-  return HomeController(
-    loading: Inject.find(),
-    logoutUsecase: logoutUsecase,
-  );
+  return HomeController(logoutUsecase: logoutUsecase);
 }

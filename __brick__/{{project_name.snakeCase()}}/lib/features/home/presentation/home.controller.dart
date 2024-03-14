@@ -1,12 +1,10 @@
 import '../../../core/base/abstractions/controller.interface.dart';
-import '../../shared/loading/loading.interface.dart';
 import '../usecases/logout.usecase.dart';
 
-class HomeController implements IController {
-  final ILoadingController loading;
+class HomeController extends IController {
   final LogoutUsecase logoutUsecase;
 
-  HomeController({required this.loading, required this.logoutUsecase});
+  HomeController({required this.logoutUsecase});
 
   Future<void> logout() async {
     await logoutUsecase();
