@@ -1,7 +1,7 @@
-import '../../../core/resources/user/domain/user_repository.interface.dart';
+import '../../../core/resources/user/dal/user.repository.dart';
 
 class AuthenticateUserUsecase {
-  final IUserRepository userRepository;
+  final UserRepository userRepository;
   const AuthenticateUserUsecase({required this.userRepository});
 
   Future<void> call({

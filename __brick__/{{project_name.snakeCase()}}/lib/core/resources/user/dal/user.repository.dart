@@ -1,18 +1,16 @@
 import '../../../base/dal/storage/storage.interface.dart';
 import '../domain/constants/user_storage.constants.dart';
 import '../domain/entities/user.entity.dart';
-import '../domain/user_repository.interface.dart';
 import 'datasource/user.datasource.interface.dart';
 import 'dto/authenticate_user.body.dart';
 import 'dto/sign_up.body.dart';
 import 'mappers/user.mapper.dart';
 
-class UserRepository implements IUserRepository {
+class UserRepository {
   final IUserDatasource userDatasource;
   final IStorage storage;
   const UserRepository({required this.userDatasource, required this.storage});
 
-  @override
   Future<({User user, String token})> authenticate({
     required String login,
     required String password,
@@ -23,13 +21,11 @@ class UserRepository implements IUserRepository {
     return (user: model, token: response.token);
   }
 
-  @override
   Future<void> save(User user) async {
     final json = UserMapper.toJson(user);
     await storage.write(key: UserStorageConstants.user, value: json);
   }
 
-  @override
   Future<void> saveToken(String token) async {
     await storage.write(
       key: UserStorageConstants.tokenAuthorization,
@@ -37,7 +33,6 @@ class UserRepository implements IUserRepository {
     );
   }
 
-  @override
   Future<bool> isLoggedIn() async {
     final user = await storage.read(UserStorageConstants.user);
     final token = await storage.read(UserStorageConstants.tokenAuthorization);
@@ -45,13 +40,11 @@ class UserRepository implements IUserRepository {
     return token != null && user != null;
   }
 
-  @override
   Future<void> signUp({required String email, required String password}) async {
     final body = SignUpBody(email: email, password: password);
     await userDatasource.signUp(body);
   }
 
-  @override
   Future<void> clearData() async {
     await storage.remove(UserStorageConstants.user);
     await storage.remove(UserStorageConstants.tokenAuthorization);

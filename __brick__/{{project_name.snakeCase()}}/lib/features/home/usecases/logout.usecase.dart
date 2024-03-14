@@ -1,7 +1,7 @@
-import '../../../core/resources/user/domain/user_repository.interface.dart';
+import '../../../core/resources/user/dal/user.repository.dart';
 
 class LogoutUsecase {
-  final IUserRepository userRepository;
+  final UserRepository userRepository;
   const LogoutUsecase({required this.userRepository});
 
   Future<void> call() async {
