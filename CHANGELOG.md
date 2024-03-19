@@ -1,3 +1,8 @@
+# 1.1.0
+- Adding interface to use analytics
+- Adding examples to how to use the analytics in login and home
+- SetCurrentScreen for analytics its made from navigation
+
 # 1.0.1
 - Updating to flutter 3.19.3
 - Passing loading dependency to controller interface
