@@ -10,7 +10,7 @@ import '../../shared/loading/loading.widget.dart';
 import '../../shared/primary_button.widget.dart';
 import '../../shared/text_field.widget.dart';
 import '../../shared/view_controller.interface.dart';
-import '../login.tag.dart';
+import 'login.tag.dart';
 import 'login.controller.dart';
 
 class LoginScreen extends ViewController<LoginController>
