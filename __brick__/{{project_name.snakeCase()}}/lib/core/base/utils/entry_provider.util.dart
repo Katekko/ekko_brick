@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../analytics/analytics_provider.dart';
+import '../inject.dart';
+
 class EntryProvider extends StatefulWidget {
   const EntryProvider({
-    Key? key,
+    super.key,
+    required this.screenName,
     required this.onBuild,
     this.onInit,
     this.onDispose,
@@ -10,7 +14,7 @@ class EntryProvider extends StatefulWidget {
     this.onActivate,
     this.onDidUpdateWidget,
     this.onDeActive,
-  }) : super(key: key);
+  });
 
   final void Function(BuildContext context)? onInit;
   final Widget Function(BuildContext context) onBuild;
@@ -25,6 +29,8 @@ class EntryProvider extends StatefulWidget {
 
   final void Function(BuildContext context)? onDeActive;
 
+  final String screenName;
+
   @override
   State<EntryProvider> createState() => _EntryProviderState();
 }
@@ -32,6 +38,7 @@ class EntryProvider extends StatefulWidget {
 class _EntryProviderState extends State<EntryProvider> {
   @override
   void initState() {
+    Inject.find<AnalyticsProvider>().setCurrentScreen(widget.screenName);
     widget.onInit?.call(context);
     super.initState();
   }

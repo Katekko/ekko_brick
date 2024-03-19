@@ -15,6 +15,7 @@ class Navigation {
         path: Routes.login,
         name: Routes.login,
         builder: (context, state) => EntryProvider(
+          screenName: Routes.login,
           onBuild: (_) => const LoginScreen(),
           onInit: (_) => LoginControllerBinding.inject(),
           onDispose: (_) => LoginControllerBinding.dipose(),
@@ -24,6 +25,7 @@ class Navigation {
         path: Routes.home,
         name: Routes.home,
         builder: (context, state) => EntryProvider(
+          screenName: Routes.home,
           onBuild: (_) => const HomeScreen(),
           onInit: (_) => HomeControllerBinding.inject(),
           onDispose: (_) => HomeControllerBinding.dipose(),
