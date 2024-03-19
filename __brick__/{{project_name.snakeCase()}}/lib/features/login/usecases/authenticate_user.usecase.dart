@@ -4,7 +4,7 @@ class AuthenticateUserUsecase {
   final UserRepository userRepository;
   const AuthenticateUserUsecase({required this.userRepository});
 
-  Future<void> call({
+  Future<String> call({
     required String login,
     required String password,
   }) async {
@@ -15,5 +15,7 @@ class AuthenticateUserUsecase {
 
     await userRepository.save(response.user);
     await userRepository.saveToken(response.token);
+
+    return response.user.id;
   }
 }

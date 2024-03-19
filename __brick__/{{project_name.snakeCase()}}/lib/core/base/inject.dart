@@ -21,7 +21,7 @@ class Inject {
   }
 
   static void remove<T extends Object>({
-    required FutureOr<dynamic> Function(T)? disposeFunction,
+    FutureOr<dynamic> Function(T)? disposeFunction,
   }) {
     GetIt.I.unregister<T>(disposingFunction: disposeFunction);
   }

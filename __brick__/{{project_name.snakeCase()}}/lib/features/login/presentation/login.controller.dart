@@ -13,19 +13,19 @@ class LoginController extends IController {
     required AuthenticateUserUsecase authenticateUserUsecase,
   }) : _authenticateUserUsecase = authenticateUserUsecase;
 
-  Future<bool> authenticateUser() async {
+  Future<String?> authenticateUser() async {
     try {
       loading.isLoading = true;
       if (_validateFields) {
-        await _authenticateUserUsecase(
+        final userId = await _authenticateUserUsecase(
           login: loginField.valueNotifier.value!,
           password: passwordField.valueNotifier.value!,
         );
 
-        return true;
+        return userId;
       }
 
-      return false;
+      return null;
     } finally {
       loading.isLoading = false;
     }

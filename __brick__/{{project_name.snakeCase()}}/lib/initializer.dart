@@ -1,13 +1,18 @@
 import 'package:devicelocale/devicelocale.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_storage/get_storage.dart';
 
+import 'config.dart';
+import 'core/base/analytics/analytics_mock.dart';
+import 'core/base/analytics/analytics_provider.dart';
 import 'core/base/abstractions/http_connect.interface.dart';
 import 'core/base/constants/storage.constants.dart';
 import 'core/base/dal/storage/getx_storage.dart';
 import 'core/base/dal/storage/storage.interface.dart';
 import 'core/base/inject.dart';
+import 'core/base/models/firebase.analytics.dart';
 import 'core/base/models/http_connect.dart';
 import 'core/base/models/token_client.dart';
 import 'core/i18n/pt_br.dart';
@@ -17,6 +22,7 @@ import 'core/resources/user/dal/datasource/user.datasource.interface.dart';
 import 'core/resources/user/dal/datasource/user.datasource.mock.dart';
 import 'features/shared/loading/loading.controller.dart';
 import 'features/shared/loading/loading.interface.dart';
+import 'firebase_options.dart';
 
 class Initializer {
   static late final String initialRoute;
@@ -30,6 +36,8 @@ class Initializer {
       await _initI18n();
       await _initConnect();
       _initDatasourceDependencies();
+      await _initFirebase();
+      _initAnalitycs();
     } catch (err) {
       rethrow;
     }
@@ -96,5 +104,20 @@ class Initializer {
     final client = TokenClient(storage);
     final connect = HttpConnect(client);
     Inject.put<IHttpConnect>(connect);
+  }
+
+  static Future<void> _initFirebase() async {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  }
+
+  static void _initAnalitycs() {
+    final env = ConfigEnvironments.getEnvironments()['env'];
+    final provider = env == Environments.production
+        ? FirebaseAnalyticsImpl()
+        : AnalyticsMock();
+
+    Inject.put<AnalyticsProvider>(provider);
   }
 }

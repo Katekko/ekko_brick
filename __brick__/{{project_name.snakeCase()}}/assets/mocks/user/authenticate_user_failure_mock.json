@@ -1,7 +1,7 @@
 {
     "errors": [
         {
-            "id": "Email",
+            "id": "user-or-password-incorrect",
             "message": "Username or password is incorrect"
         }
     ]

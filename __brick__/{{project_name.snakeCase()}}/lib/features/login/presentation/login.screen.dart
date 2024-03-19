@@ -4,14 +4,17 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/base/style/colors.dart';
 import '../../../../core/base/utils/snackbar.util.dart';
 import '../../../../core/navigation/routes.dart';
+import '../../../core/base/analytics/analytics.mixin.dart';
 import '../../../core/resources/user/domain/exceptions/user_or_password_incorrect.exception.dart';
 import '../../shared/loading/loading.widget.dart';
 import '../../shared/primary_button.widget.dart';
 import '../../shared/text_field.widget.dart';
 import '../../shared/view_controller.interface.dart';
+import '../login.tag.dart';
 import 'login.controller.dart';
 
-class LoginScreen extends ViewController<LoginController> {
+class LoginScreen extends ViewController<LoginController>
+    with AnalyticsMixin<LoginTag> {
   const LoginScreen({super.key});
 
   @override
@@ -92,8 +95,12 @@ class LoginScreen extends ViewController<LoginController> {
   void authenticateUser(BuildContext context) async {
     try {
       FocusScope.of(context).unfocus();
-      final success = await controller.authenticateUser();
-      if (context.mounted && success) context.goNamed(Routes.home);
+      await tag.onLoginButtonClicked(i18n.strings.login.loginButtonLabel);
+      final userId = await controller.authenticateUser();
+      if (userId != null) {
+        await tag.onLoginSucceed(userId);
+        if (context.mounted) context.goNamed(Routes.home);
+      }
     } on UserOrPasswordIncorrectException catch (err) {
       if (context.mounted) showErrorSnackbar(context: context, err: err);
     }

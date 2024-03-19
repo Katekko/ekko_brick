@@ -36,7 +36,8 @@ class UserDatasourceMock implements IUserDatasource {
     );
 
     log(
-      '[EKKO BRICK] authenticateUser - email:${body.email}, password:${body.password}',
+      name: 'MOCK',
+      'authenticateUser - email:${body.email}, password:${body.password}',
     );
 
     return response.data!;
@@ -55,7 +56,8 @@ class UserDatasourceMock implements IUserDatasource {
       }
 
       log(
-        '[EKKO BRICK] signUp - email:${body.email}, password:${body.password}',
+        name: 'MOCK',
+        'signUp - email:${body.email}, password:${body.password}',
       );
     } catch (err) {
       rethrow;

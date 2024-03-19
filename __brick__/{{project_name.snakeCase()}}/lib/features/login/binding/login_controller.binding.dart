@@ -5,16 +5,19 @@ import '../../../../../core/base/models/text_react_field.model.dart';
 import '../../../core/resources/user/dal/datasource/user.datasource.interface.dart';
 import '../../../core/resources/user/dal/user.repository.dart';
 import '../../../core/base/inject.dart';
+import '../login.tag.dart';
 import '../presentation/login.controller.dart';
 import '../usecases/authenticate_user.usecase.dart';
 
 class LoginControllerBinding {
   static void inject() {
     Inject.injectController<LoginController>(makeLoginController);
+    Inject.lazyPut<LoginTag>(makeLoginTag);
   }
 
   static void dipose() {
     Inject.disposeController<LoginController>();
+    Inject.remove<LoginTag>();
   }
 }
 
@@ -36,6 +39,10 @@ LoginController makeLoginController() {
     passwordField: makePasswordField(),
     authenticateUserUsecase: authenticateUserUsecase,
   );
+}
+
+LoginTag makeLoginTag() {
+  return LoginTag(Inject.find());
 }
 
 IField<String> makeLoginField() {
