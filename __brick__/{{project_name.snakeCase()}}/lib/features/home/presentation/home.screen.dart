@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/base/analytics/analytics.mixin.dart';
 import '../../../core/base/style/colors.dart';
 import '../../../core/navigation/routes.dart';
 import '../../shared/loading/loading.widget.dart';
 import '../../shared/view_controller.interface.dart';
 import 'home.controller.dart';
+import 'tag/home.tag.dart';
 import 'widgets/dialogs/logout.dialog.dart';
 
-class HomeScreen extends ViewStateController<HomeController> {
+class HomeScreen extends ViewStateController<HomeController>
+    with AnalyticsMixin<HomeTag> {
   const HomeScreen({super.key});
 
   @override
