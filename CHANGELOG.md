@@ -1,3 +1,6 @@
+# 1.3.1
+- Removing firebase references (maybe you don't wanna use in your project lol)
+
 # 1.3.0
 - Supporting crashlytics
 
