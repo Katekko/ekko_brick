@@ -1,3 +1,7 @@
+# 1.2.0
+- Upgrading version to use the newer fvm
+- Changing some patterns to use the analytics
+
 # 1.1.0
 - Adding interface to use analytics
 - Adding examples to how to use the analytics in login and home
