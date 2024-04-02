@@ -1,5 +1,5 @@
 import '../extensions/string.extension.dart';
-import 'analytics_actions.enum.dart';
+import 'analytics_events.enum.dart';
 import 'analytics_provider.dart';
 
 mixin SendEventMixin {
@@ -7,24 +7,22 @@ mixin SendEventMixin {
   String get category;
 
   Future<void> sendEvent({
-    required AnalyticsActionsEnum action,
+    required AnalyticsEventsEnum event,
     required String label,
+    Map<String, dynamic>? customParams,
   }) {
     return provider.sendEvent(
-      name: 'event',
+      name: event.value,
       parameters: {
         'category': category,
-        'action': action.value,
         'label': label.toAnalyticsFormat,
+        ...?customParams,
       },
     );
   }
 
-  Future<void> sendButtonClick(String label) {
-    return sendEvent(
-      action: AnalyticsActionsEnum.buttonClick,
-      label: label,
-    );
+  Future<void> sendClickEvent(String label) {
+    return sendEvent(event: AnalyticsEventsEnum.click, label: label);
   }
 
   Future<void> setUserId(String useId) {

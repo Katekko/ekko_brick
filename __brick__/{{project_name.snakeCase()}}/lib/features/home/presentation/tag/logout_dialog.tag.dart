@@ -4,13 +4,13 @@ class LogoutDialogTag extends AnalyticsBase {
   const LogoutDialogTag(super.analyticsProvider);
 
   @override
-  String get category => 'home:logout-dialog';
+  String get category => 'home:dialog:logout';
 
   Future<void> onClickYesLogout(String label) async {
-    sendButtonClick(label);
+    sendClickEvent(label);
   }
 
   Future<void> onClickNoLogout(String label) async {
-    sendButtonClick(label);
+    sendClickEvent(label);
   }
 }

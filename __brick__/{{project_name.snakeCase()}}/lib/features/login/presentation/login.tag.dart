@@ -1,4 +1,4 @@
-import '../../core/base/analytics/analytics_base.dart';
+import '../../../core/base/analytics/analytics_base.dart';
 
 class LoginTag extends AnalyticsBase {
   const LoginTag(super.analytics);
@@ -7,7 +7,7 @@ class LoginTag extends AnalyticsBase {
   String get category => 'login';
 
   Future<void> onLoginButtonClicked(String label) async {
-    sendButtonClick(label);
+    sendClickEvent(label);
   }
 
   Future<void> onLoginSucceed(String useId) async {
