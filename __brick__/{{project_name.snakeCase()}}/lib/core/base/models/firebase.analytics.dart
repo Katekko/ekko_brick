@@ -17,7 +17,7 @@ class FirebaseAnalyticsImpl implements AnalyticsProvider {
   }
 
   @override
-  Future<void> setUserId(String id) {
+  Future<void> setUserId(String? id) {
     throw UnimplementedError();
   }
 }

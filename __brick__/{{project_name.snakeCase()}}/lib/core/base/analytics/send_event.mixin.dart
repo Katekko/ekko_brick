@@ -25,7 +25,7 @@ mixin SendEventMixin {
     return sendEvent(event: AnalyticsEventsEnum.click, label: label);
   }
 
-  Future<void> setUserId(String useId) {
+  Future<void> setUserId(String? useId) {
     return provider.setUserId(useId);
   }
 }

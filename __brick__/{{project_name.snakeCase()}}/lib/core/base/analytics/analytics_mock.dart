@@ -9,21 +9,21 @@ class AnalyticsMock implements AnalyticsProvider {
     required Map<String, dynamic> parameters,
   }) async {
     log(
-      '${parameters.values}'
+      'Event: ${parameters.values}'
           .replaceAll('(', '')
           .replaceAll(')', '')
           .replaceAll(', ', ':'),
-      name: name,
+      name: 'Analytics',
     );
   }
 
   @override
   Future<void> setCurrentScreen(String screenName) async {
-    log(screenName, name: 'event - setCurrentScreen');
+    log('setCurrentScreen: $screenName', name: 'Analytics');
   }
 
   @override
-  Future<void> setUserId(String id) async {
-    log(id, name: 'event - setUserId');
+  Future<void> setUserId(String? id) async {
+    log('setUserId: $id', name: 'Analytics');
   }
 }

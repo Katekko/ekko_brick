@@ -1,7 +1,7 @@
 abstract class AnalyticsProvider {
   const AnalyticsProvider();
 
-  Future<void> setUserId(String id);
+  Future<void> setUserId(String? id);
 
   Future<void> setCurrentScreen(String screenName);
 

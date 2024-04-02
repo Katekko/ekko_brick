@@ -49,14 +49,18 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void logout() {
+    void onPressedYes() async {
+      await widget.controller.logout();
+      await widget.tag.onLogout();
+
+      if (mounted) GoRouter.of(context).goNamed(Routes.login);
+    }
+
     showDialog(
       context: context,
       builder: (_) => LogoutDialog(
         i18n: widget.i18n,
-        onPressedYes: () {
-          widget.controller.logout();
-          context.goNamed(Routes.login);
-        },
+        onPressedYes: onPressedYes,
       ),
     );
   }

@@ -1,14 +1,26 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import 'config.dart';
+import 'core/base/crashlytics/crashlytics_provider.dart';
+import 'core/base/inject.dart';
 import 'core/navigation/navigation.dart';
 import 'core/navigation/routes.dart';
 import 'initializer.dart';
 
 void main() async {
-  await Initializer.init();
-  Initializer.initialRoute = await Routes.initialRoute;
-  runApp(const MyApp());
+  await runZonedGuarded(
+    () async {
+      await Initializer.init();
+      Initializer.initialRoute = await Routes.initialRoute;
+      runApp(const MyApp());
+    },
+    (error, stack) {
+      final crashlytics = Inject.find<CrashlyticsProvider>();
+      crashlytics.recordError(error, stack);
+    },
+  );
 }
 
 class MyApp extends StatelessWidget {

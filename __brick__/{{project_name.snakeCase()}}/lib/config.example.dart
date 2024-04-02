@@ -6,6 +6,8 @@ class Environments {
 }
 
 class ConfigEnvironments {
+  static String get getCurrentEnviroment => _currentEnvironments;
+
   static const String _currentEnvironments = Environments.production;
   static const List<Map<String, String>> _availableEnvironments = [
     {
