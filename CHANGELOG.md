@@ -1,3 +1,6 @@
+# 1.3.0
+- Supporting crashlytics
+
 # 1.2.0
 - Upgrading version to use the newer fvm
 - Changing some patterns to use the analytics
