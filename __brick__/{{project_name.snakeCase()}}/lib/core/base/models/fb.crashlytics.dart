@@ -1,5 +1,3 @@
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-
 import '../crashlytics/crashlytics_provider.dart';
 
 class FbCrashlytics implements CrashlyticsProvider {

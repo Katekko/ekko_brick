@@ -1,5 +1,3 @@
-import 'package:firebase_analytics/firebase_analytics.dart';
-
 import '../analytics/analytics_provider.dart';
 
 class FirebaseAnalyticsImpl implements AnalyticsProvider {

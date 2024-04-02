@@ -1,5 +1,4 @@
 import 'package:devicelocale/devicelocale.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -26,7 +25,6 @@ import 'core/resources/user/dal/datasource/user.datasource.interface.dart';
 import 'core/resources/user/dal/datasource/user.datasource.mock.dart';
 import 'features/shared/loading/loading.controller.dart';
 import 'features/shared/loading/loading.interface.dart';
-import 'firebase_options.dart';
 
 class Initializer {
   static late final String initialRoute;
@@ -112,9 +110,9 @@ class Initializer {
   }
 
   static Future<void> _initFirebase() async {
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
+    // await Firebase.initializeApp(
+    //   options: DefaultFirebaseOptions.currentPlatform,
+    // );
   }
 
   static void _initAnalytics() async {
