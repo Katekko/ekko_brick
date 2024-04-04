@@ -5,6 +5,7 @@ import 'datasource/user.datasource.interface.dart';
 import 'dto/authenticate_user.body.dart';
 import 'dto/sign_up.body.dart';
 import 'mappers/user.mapper.dart';
+import 'mappers/user_data.mapper.dart';
 
 class UserRepository {
   final IUserDatasource userDatasource;
@@ -17,12 +18,12 @@ class UserRepository {
   }) async {
     final body = AuthenticateUserBody(email: login, password: password);
     final response = await userDatasource.authenticateUser(body);
-    final model = UserMapper.toModel(response.user);
+    final model = response.user.toEntity();
     return (user: model, token: response.token);
   }
 
   Future<void> save(User user) async {
-    final json = UserMapper.toJson(user);
+    final json = user.toMap();
     await storage.write(key: UserStorageConstants.user, value: json);
   }
 
