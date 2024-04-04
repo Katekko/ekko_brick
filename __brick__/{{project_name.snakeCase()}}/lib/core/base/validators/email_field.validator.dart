@@ -1,12 +1,11 @@
 import 'package:equatable/equatable.dart';
 
-import '../../i18n/translation.dart';
 import '../abstractions/validators/field_validator.interface.dart';
-import '../inject.dart';
+import '../mixins/l10n.mixin.dart';
 
-class EmailFieldValidator<T> extends Equatable implements IFieldValidator<T> {
-  final i18n = Inject.find<StringsTranslations>().strings.validators;
-
+class EmailFieldValidator<T> extends Equatable
+    with l10nMixin
+    implements IFieldValidator<T> {
   bool isValidEmail(String email) {
     final regex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
     return regex.hasMatch(email);
@@ -16,11 +15,11 @@ class EmailFieldValidator<T> extends Equatable implements IFieldValidator<T> {
   String? validate(T? value) {
     final email = value as String?;
     if (email == null || email.isEmpty) {
-      return i18n.emailIsRequired;
+      return l10n.strings.validators.emailIsRequired;
     }
 
     if (!isValidEmail(email)) {
-      return i18n.emailIsInvalid;
+      return l10n.strings.validators.emailIsInvalid;
     }
 
     return null;

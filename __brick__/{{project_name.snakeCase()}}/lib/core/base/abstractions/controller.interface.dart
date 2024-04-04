@@ -1,8 +1,5 @@
-import '../../../features/shared/loading/loading.interface.dart';
-import '../inject.dart';
+import '../mixins/loading.mixin.dart';
 
-abstract class IController {
-  ILoadingController get loading => Inject.find();
-
+abstract class IController with LoadingMixin {
   void dispose();
 }

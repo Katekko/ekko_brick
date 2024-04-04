@@ -4,17 +4,18 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/base/style/colors.dart';
 import '../../../../core/base/utils/snackbar.util.dart';
 import '../../../../core/navigation/routes.dart';
-import '../../../core/base/analytics/analytics.mixin.dart';
+import '../../../core/base/mixins/analytics.mixin.dart';
+import '../../../core/base/mixins/controller.mixin.dart';
+import '../../../core/base/mixins/l10n.mixin.dart';
 import '../../../core/resources/user/domain/exceptions/user_or_password_incorrect.exception.dart';
 import '../../shared/loading/loading.widget.dart';
 import '../../shared/primary_button.widget.dart';
 import '../../shared/text_field.widget.dart';
-import '../../shared/view_controller.interface.dart';
 import 'tag/login.tag.dart';
 import 'login.controller.dart';
 
-class LoginScreen extends ViewController<LoginController>
-    with AnalyticsMixin<LoginTag> {
+class LoginScreen extends StatelessWidget
+    with ControllerMixin<LoginController>, AnalyticsMixin<LoginTag>, l10nMixin {
   const LoginScreen({super.key});
 
   @override
@@ -31,7 +32,7 @@ class LoginScreen extends ViewController<LoginController>
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      i18n.strings.login.title,
+                      l10n.strings.login.title,
                       style:
                           Theme.of(context).textTheme.displayMedium?.copyWith(
                                 color: Colors.white,
@@ -48,7 +49,7 @@ class LoginScreen extends ViewController<LoginController>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        i18n.strings.login.userNameLabel,
+                        l10n.strings.login.userNameLabel,
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
@@ -57,13 +58,13 @@ class LoginScreen extends ViewController<LoginController>
                       ),
                       const SizedBox(height: 8),
                       TextFieldWidget(
-                        label: i18n.strings.login.userNameLabel,
+                        label: l10n.strings.login.userNameLabel,
                         field: controller.loginField,
                         useLabelAsHint: true,
                       ),
                       const SizedBox(height: 20.0),
                       Text(
-                        i18n.strings.login.passwordLabel,
+                        l10n.strings.login.passwordLabel,
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
@@ -72,13 +73,13 @@ class LoginScreen extends ViewController<LoginController>
                       ),
                       const SizedBox(height: 8),
                       TextFieldWidget(
-                        label: i18n.strings.login.passwordLabel,
+                        label: l10n.strings.login.passwordLabel,
                         field: controller.passwordField,
                         useLabelAsHint: true,
                       ),
                       const SizedBox(height: 20.0),
                       PrimaryButtonWidget(
-                        text: i18n.strings.login.loginButtonLabel,
+                        text: l10n.strings.login.loginButtonLabel,
                         onPressed: authenticateUser,
                       ),
                     ],
@@ -95,7 +96,7 @@ class LoginScreen extends ViewController<LoginController>
   void authenticateUser(BuildContext context) async {
     try {
       FocusScope.of(context).unfocus();
-      await tag.onLoginButtonClicked(i18n.strings.login.loginButtonLabel);
+      await tag.onLoginButtonClicked(l10n.strings.login.loginButtonLabel);
       final userId = await controller.authenticateUser();
       if (userId != null) {
         await tag.onLoginSucceed(userId);

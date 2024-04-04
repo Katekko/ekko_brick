@@ -1,16 +1,14 @@
 import 'package:equatable/equatable.dart';
 
-import '../../i18n/translation.dart';
 import '../abstractions/validators/field_validator.interface.dart';
-import '../inject.dart';
+import '../mixins/l10n.mixin.dart';
 
 class RequiredFieldValidator<T> extends Equatable
+    with l10nMixin
     implements IFieldValidator<T> {
-  final i18n = Inject.find<StringsTranslations>().strings.validators;
-
   @override
   String? validate(T? value) {
-    final message = i18n.required;
+    final message = l10n.strings.validators.required;
     if (value == null) return message;
 
     if (value is String && value.isEmpty) {

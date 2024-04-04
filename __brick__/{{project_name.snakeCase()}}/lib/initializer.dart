@@ -18,9 +18,9 @@ import 'core/base/models/fb.crashlytics.dart';
 import 'core/base/models/firebase.analytics.dart';
 import 'core/base/models/http_connect.dart';
 import 'core/base/models/token_client.dart';
-import 'core/i18n/en_us.dart';
-import 'core/i18n/pt_br.dart';
-import 'core/i18n/translation.dart';
+import 'core/l10n/en_us.dart';
+import 'core/l10n/pt_br.dart';
+import 'core/l10n/translation.dart';
 import 'core/resources/user/dal/datasource/user.datasource.interface.dart';
 import 'core/resources/user/dal/datasource/user.datasource.mock.dart';
 import 'features/shared/loading/loading.controller.dart';
@@ -55,7 +55,7 @@ class Initializer {
 
   static void _initGlobalLoading() {
     final loading = LoadingController();
-    Inject.put<ILoadingController>(loading);
+    Inject.put<LoadingController>(loading);
   }
 
   static void _initDatasourceDependencies() {

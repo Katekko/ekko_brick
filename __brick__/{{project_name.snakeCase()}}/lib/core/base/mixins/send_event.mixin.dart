@@ -1,6 +1,6 @@
 import '../extensions/string.extension.dart';
-import 'analytics_events.enum.dart';
-import 'analytics_provider.dart';
+import '../analytics/analytics_events.enum.dart';
+import '../analytics/analytics_provider.dart';
 
 mixin SendEventMixin {
   AnalyticsProvider get provider;

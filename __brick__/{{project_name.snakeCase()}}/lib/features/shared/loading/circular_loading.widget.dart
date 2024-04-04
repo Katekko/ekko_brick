@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../view_controller.interface.dart';
-import 'loading.interface.dart';
+import '../../../core/base/mixins/controller.mixin.dart';
+import 'loading.controller.dart';
 
-class CircularLoadingWidget extends ViewController<ILoadingController> {
+class CircularLoadingWidget extends StatelessWidget
+    with ControllerMixin<LoadingController> {
   const CircularLoadingWidget({super.key});
 
   @override

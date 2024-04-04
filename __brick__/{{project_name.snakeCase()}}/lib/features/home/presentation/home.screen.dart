@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/base/analytics/analytics.mixin.dart';
+import '../../../core/base/mixins/analytics.mixin.dart';
+import '../../../core/base/mixins/controller.mixin.dart';
+import '../../../core/base/mixins/l10n.mixin.dart';
 import '../../../core/base/style/colors.dart';
 import '../../../core/navigation/routes.dart';
 import '../../shared/loading/loading.widget.dart';
-import '../../shared/view_controller.interface.dart';
 import 'home.controller.dart';
 import 'tag/home.tag.dart';
 import 'widgets/dialogs/logout.dialog.dart';
 
-class HomeScreen extends ViewStateController<HomeController>
-    with AnalyticsMixin<HomeTag> {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  State<ViewStateController<HomeController>> createState() {
+  State<HomeScreen> createState() {
     return _HomeScreenState();
   }
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen>
+    with ControllerMixin<HomeController>, AnalyticsMixin<HomeTag>, l10nMixin {
   @override
   Widget build(BuildContext context) {
     return LoadingWidget(
@@ -41,27 +42,24 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         appBar: AppBar(
           backgroundColor: Colors.black,
-          title: Text(widget.i18n.strings.home.title),
+          title: Text(l10n.strings.home.title),
         ),
-        body: Center(child: Text(widget.i18n.strings.home.title)),
+        body: Center(child: Text(l10n.strings.home.title)),
       ),
     );
   }
 
   void logout() {
     void onPressedYes() async {
-      await widget.controller.logout();
-      await widget.tag.onLogout();
+      await controller.logout();
+      await tag.onLogout();
 
       if (mounted) GoRouter.of(context).goNamed(Routes.login);
     }
 
     showDialog(
       context: context,
-      builder: (_) => LogoutDialog(
-        i18n: widget.i18n,
-        onPressedYes: onPressedYes,
-      ),
+      builder: (_) => LogoutDialog(l10n: l10n, onPressedYes: onPressedYes),
     );
   }
 }
