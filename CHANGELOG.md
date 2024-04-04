@@ -1,3 +1,8 @@
+# 1.4.0
+- Changing the mapper to extensions instead static class
+- Changing i18n to l10n
+- Changing injection to mixins
+
 # 1.3.1
 - Removing firebase references (maybe you don't wanna use in your project lol)
 
