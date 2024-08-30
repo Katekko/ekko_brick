@@ -17,7 +17,7 @@ mason make ekko_brick --project_name katekko --project_version 3.19.3
 | Variable           | Description                     | Default | Type      | Conditional | When             |
 | ------------------ | ------------------------------- | ------- | --------- | ----------- | ---------------- |
 | `project_name`     | The name of the project         | example | `string`  | false       | N/A              |
-| `project_version`  | The project version             | 3.19.3  | `string`  | false       | N/A              |
+| `project_version`  | The flutter  version            | 3.24.0  | `string`  | false       | N/A              |
 
 ## How to initialize your project after brick 📦
 
