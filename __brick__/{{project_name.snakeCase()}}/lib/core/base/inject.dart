@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:get_it/get_it.dart';
 
-import 'abstractions/controller.interface.dart';
+import 'abstractions/controller_interface.dart';
 
 class Inject {
   Inject._();

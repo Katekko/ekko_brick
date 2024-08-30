@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import '../../features/bindings.dart';
 import '../../features/screens.dart';
 import '../../initializer.dart';
-import '../base/utils/entry_provider.util.dart';
+import '../base/utils/entry_provider_util.dart';
 import 'routes.dart';
 
 class Navigation {

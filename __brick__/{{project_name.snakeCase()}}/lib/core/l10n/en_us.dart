@@ -1,6 +1,6 @@
-import 'contexts/login_screen.strings.dart';
-import 'contexts/home_screen.strings.dart';
-import 'contexts/validators.strings.dart';
+import 'contexts/login_screen_strings.dart';
+import 'contexts/home_screen_strings.dart';
+import 'contexts/validators_strings.dart';
 import 'translation.dart';
 
 class EnUsStringsTranslations implements StringsTranslations {

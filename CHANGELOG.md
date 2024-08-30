@@ -1,3 +1,10 @@
+# 1.5.0
+- Upgrading flutter to 3.24.0
+- Upgrading dart sdk to '>=3.5.0 <4.0.0'
+- Upgrading libs
+- Improving the pattern in the project
+    - Changing files using dots to undescore
+
 # 1.4.0
 - Changing the mapper to extensions instead static class
 - Changing i18n to l10n

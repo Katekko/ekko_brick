@@ -1,3 +1,3 @@
-export 'home_screen.strings.dart';
-export 'login_screen.strings.dart';
-export 'validators.strings.dart';
+export 'home_screen_strings.dart';
+export 'login_screen_strings.dart';
+export 'validators_strings.dart';

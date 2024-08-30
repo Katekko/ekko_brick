@@ -1,2 +1,2 @@
-export 'home/presentation/home.screen.dart';
-export 'login/presentation/login.screen.dart';
+export 'home/presentation/home_screen.dart';
+export 'login/presentation/login_screen.dart';
