@@ -24,7 +24,6 @@ import 'core/l10n/translation.dart';
 import 'core/resources/user/dal/datasource/user.datasource.interface.dart';
 import 'core/resources/user/dal/datasource/user.datasource.mock.dart';
 import 'features/shared/loading/loading.controller.dart';
-import 'features/shared/loading/loading.interface.dart';
 
 class Initializer {
   static late final String initialRoute;
@@ -59,6 +58,7 @@ class Initializer {
   }
 
   static void _initDatasourceDependencies() {
+    //  TODO: Change this to user server instead a local mock
     //  final connect = Inject.find<IHttpConnect>();
     //  final authDatasource = UserDatasource(connect: connect);
 
