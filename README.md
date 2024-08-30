@@ -9,7 +9,7 @@ mason add ekko_brick -g
 ```
 
 ```
-mason make ekko_brick --project_name katekko --project_version 3.19.3
+mason make ekko_brick --project_name katekko --project_version 3.24.0
 ```
 
 ## Variables ✨
