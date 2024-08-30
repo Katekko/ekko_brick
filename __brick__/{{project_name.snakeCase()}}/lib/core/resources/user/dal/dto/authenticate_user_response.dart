@@ -1,14 +1,14 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../../../base/dal/data/error.data.dart';
-import '../data/user.data.dart';
+import '../../../../base/dal/data/error_model.dart';
+import '../data/user_model.dart';
 
-part 'authenticate_user.response.g.dart';
+part 'authenticate_user_response.g.dart';
 
 @JsonSerializable()
 class AuthenticateUserResponse {
   final AuthenticateUserDataResponse? data;
-  final List<ErrorData>? errors;
+  final List<ErrorModel>? errors;
 
   const AuthenticateUserResponse({required this.data, required this.errors})
       : assert(data != null || errors != null);
@@ -21,7 +21,7 @@ class AuthenticateUserResponse {
 
 @JsonSerializable()
 class AuthenticateUserDataResponse {
-  final UserData user;
+  final UserModel user;
   final String token;
   const AuthenticateUserDataResponse({required this.user, required this.token});
 

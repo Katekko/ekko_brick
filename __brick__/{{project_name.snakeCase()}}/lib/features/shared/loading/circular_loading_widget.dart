@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/base/mixins/controller.mixin.dart';
-import 'loading.controller.dart';
+import '../../../core/base/mixins/controller_mixin.dart';
+import 'loading_controller.dart';
 
 class CircularLoadingWidget extends StatelessWidget
     with ControllerMixin<LoadingController> {

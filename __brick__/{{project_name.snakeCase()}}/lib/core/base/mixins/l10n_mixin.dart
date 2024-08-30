@@ -1,6 +1,6 @@
 import '../../l10n/translation.dart';
 import '../inject.dart';
 
-mixin l10nMixin {
+mixin L10nMixin {
   StringsTranslations get l10n => Inject.find();
 }

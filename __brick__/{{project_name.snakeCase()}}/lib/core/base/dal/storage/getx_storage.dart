@@ -1,6 +1,6 @@
 import 'package:get_storage/get_storage.dart';
 
-import 'storage.interface.dart';
+import 'storage_interface.dart';
 
 class GetxStorage implements IStorage {
   final GetStorage _storage;

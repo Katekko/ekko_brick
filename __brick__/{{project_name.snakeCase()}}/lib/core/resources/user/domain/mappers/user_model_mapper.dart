@@ -1,5 +1,5 @@
-import '../../domain/entities/user.entity.dart';
-import '../data/user_model.dart';
+import '../../dal/data/user_model.dart';
+import '../../domain/entities/user_entity.dart';
 
 extension UserDataMapper on UserModel {
   User toEntity() {

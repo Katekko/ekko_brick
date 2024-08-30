@@ -1,4 +1,4 @@
-import './response.model.dart';
+import './response_model.dart';
 
 abstract class IHttpConnect {
   Future<Response<T>> get<T>(

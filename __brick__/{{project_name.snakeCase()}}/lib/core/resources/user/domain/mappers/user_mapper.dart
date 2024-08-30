@@ -1,4 +1,4 @@
-import '../../domain/entities/user.entity.dart';
+import '../../domain/entities/user_entity.dart';
 
 extension UserMapper on User {
   Map<String, dynamic> toMap() {

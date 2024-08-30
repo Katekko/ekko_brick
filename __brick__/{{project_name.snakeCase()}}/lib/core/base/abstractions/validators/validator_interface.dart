@@ -1,4 +1,4 @@
-import 'field_validator.interface.dart';
+import 'field_validator_interface.dart';
 
 abstract class IValidator<T> {
   /// Lista de validators para validarem o campo

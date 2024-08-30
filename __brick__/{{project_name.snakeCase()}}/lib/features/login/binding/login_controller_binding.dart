@@ -1,13 +1,13 @@
-import '../../../../../core/base/abstractions/field.interface.dart';
-import '../../../../../core/base/builders/field_validator.builder.dart';
-import '../../../../../core/base/dal/storage/storage.interface.dart';
-import '../../../../../core/base/models/text_react_field.model.dart';
-import '../../../core/resources/user/dal/datasource/user.datasource.interface.dart';
-import '../../../core/resources/user/dal/user.repository.dart';
+import '../../../../../core/base/abstractions/field_interface.dart';
+import '../../../../../core/base/builders/field_validator_builder.dart';
+import '../../../../../core/base/dal/storage/storage_interface.dart';
+import '../../../../../core/base/models/text_react_field.dart';
+import '../../../core/resources/user/dal/datasource/user_datasource_interface.dart';
+import '../../../core/resources/user/dal/user_repository.dart';
 import '../../../core/base/inject.dart';
-import '../presentation/tag/login.tag.dart';
-import '../presentation/login.controller.dart';
-import '../usecases/authenticate_user.usecase.dart';
+import '../presentation/tag/login_tag.dart';
+import '../presentation/login_controller.dart';
+import '../usecases/authenticate_user_usecase.dart';
 
 class LoginControllerBinding {
   static void inject() {
@@ -46,13 +46,13 @@ LoginTag makeLoginTag() {
 }
 
 IField<String> makeLoginField() {
-  return TextReactFieldModel(
+  return TextReactField(
     validators: FieldValidatorBuilder<String>().required().build(),
   );
 }
 
 IField<String> makePasswordField() {
-  return TextReactFieldModel(
+  return TextReactField(
     validators: FieldValidatorBuilder<String>().required().password().build(),
   );
 }

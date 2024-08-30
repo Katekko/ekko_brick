@@ -1,16 +1,16 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'error.data.g.dart';
+part 'error_model.g.dart';
 
 @JsonSerializable()
 class ErrorModel {
   final String id;
   final String message;
 
-  const ErrorData({required this.id, required this.message});
+  const ErrorModel({required this.id, required this.message});
 
-  factory ErrorData.fromJson(Map<String, dynamic> json) =>
-      _$ErrorDataFromJson(json);
+  factory ErrorModel.fromJson(Map<String, dynamic> json) =>
+      _$ErrorModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$ErrorDataToJson(this);
 }

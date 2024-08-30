@@ -1,5 +1,5 @@
-import '../dal/data/error.data.dart';
+import '../dal/data/error_model.dart';
 
 abstract class CustomException implements Exception {
-  ErrorData get failure;
+  ErrorModel get failure;
 }

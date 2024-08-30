@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'error.data.dart';
+part of 'error_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ErrorData _$ErrorDataFromJson(Map<String, dynamic> json) => ErrorData(
+ErrorModel _$ErrorModelFromJson(Map<String, dynamic> json) => ErrorData(
       id: json['id'] as String,
       message: json['message'] as String,
     );
 
-Map<String, dynamic> _$ErrorDataToJson(ErrorData instance) => <String, dynamic>{
+Map<String, dynamic> _$ErrorDataToJson(ErrorModel instance) => <String, dynamic>{
       'id': instance.id,
       'message': instance.message,
     };

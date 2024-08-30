@@ -1,14 +1,14 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import '../../../../base/utils/mock.util.dart';
-import '../../domain/exceptions/email_already_in_use.exception.dart';
-import '../../domain/exceptions/user_or_password_incorrect.exception.dart';
-import '../dto/authenticate_user.body.dart';
-import '../dto/authenticate_user.response.dart';
-import '../dto/sign_up.body.dart';
-import 'user.datasource.interface.dart';
-import 'user_path_mocks.constants.dart';
+import '../../../../base/utils/mock_util.dart';
+import '../../domain/exceptions/email_already_in_use_exception.dart';
+import '../../domain/exceptions/user_or_password_incorrect_exception.dart';
+import '../dto/authenticate_user_body.dart';
+import '../dto/authenticate_user_response.dart';
+import '../dto/sign_up_body.dart';
+import 'user_datasource_interface.dart';
+import 'user_path_mocks_constants.dart';
 
 class UserDatasourceMock implements IUserDatasource {
   Future<AuthenticateUserResponse> _getMock(String path) async {

@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 
-import '../../core/base/abstractions/field.interface.dart';
+import '../../core/base/abstractions/field_interface.dart';
 
 class CheckboxWidget extends StatelessWidget {
-  final IField<bool> field;
-  final IconData icon;
-  final String label;
   const CheckboxWidget({
     super.key,
     required this.label,
     required this.field,
     required this.icon,
   });
+
+  final IField<bool> field;
+  final IconData icon;
+  final String label;
+
+  void onChanged(bool? val, {required BuildContext context}) {
+    FocusScope.of(context).unfocus();
+    field.valueNotifier.value = val!;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +42,5 @@ class CheckboxWidget extends StatelessWidget {
         );
       },
     );
-  }
-
-  void onChanged(bool? val, {required BuildContext context}) {
-    FocusScope.of(context).unfocus();
-    field.valueNotifier.value = val!;
   }
 }

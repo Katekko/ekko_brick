@@ -1,5 +1,5 @@
-import '../extensions/string.extension.dart';
-import '../analytics/analytics_events.enum.dart';
+import '../extensions/string_extension.dart';
+import '../analytics/analytics_events_enum.dart';
 import '../analytics/analytics_provider.dart';
 
 mixin SendEventMixin {

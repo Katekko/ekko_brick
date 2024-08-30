@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../core/base/abstractions/field.interface.dart';
+import '../../core/base/abstractions/field_interface.dart';
 import '../../core/base/style/colors.dart';
 
 class DatePickerWidget extends StatelessWidget {
@@ -33,8 +33,35 @@ class DatePickerWidget extends StatelessWidget {
 }
 
 class _PickerWidget extends StatelessWidget {
-  final IField<DateTime> field;
   const _PickerWidget({required this.field});
+  
+  final IField<DateTime> field;
+
+  void onPressed(BuildContext context) async {
+    FocusScope.of(context).unfocus();
+
+    final theme = Theme.of(context);
+    final date = await showDatePicker(
+      context: context,
+      initialDate: field.valueNotifier.value ?? DateTime.now(),
+      firstDate: DateTime(2023),
+      lastDate: DateTime(2024),
+      builder: (BuildContext context, Widget? child) {
+        return Theme(
+          data: theme.copyWith(
+            colorScheme: theme.colorScheme.copyWith(
+              primary: const Color(CColors.background),
+              onPrimary: Colors.white,
+            ),
+          ),
+          child: child!,
+        );
+      },
+    );
+    if (date != null) {
+      field.valueNotifier.value = date;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,31 +100,5 @@ class _PickerWidget extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void onPressed(BuildContext context) async {
-    FocusScope.of(context).unfocus();
-
-    final theme = Theme.of(context);
-    final date = await showDatePicker(
-      context: context,
-      initialDate: field.valueNotifier.value ?? DateTime.now(),
-      firstDate: DateTime(2023),
-      lastDate: DateTime(2024),
-      builder: (BuildContext context, Widget? child) {
-        return Theme(
-          data: theme.copyWith(
-            colorScheme: theme.colorScheme.copyWith(
-              primary: const Color(CColors.background),
-              onPrimary: Colors.white,
-            ),
-          ),
-          child: child!,
-        );
-      },
-    );
-    if (date != null) {
-      field.valueNotifier.value = date;
-    }
   }
 }

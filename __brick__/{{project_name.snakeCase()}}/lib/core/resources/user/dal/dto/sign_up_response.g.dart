@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sign_up.response.dart';
+part of 'sign_up_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -9,11 +9,11 @@ part of 'sign_up.response.dart';
 SignUpResponse _$SignUpResponseFromJson(Map<String, dynamic> json) =>
     SignUpResponse(
       errors: (json['errors'] as List<dynamic>?)
-          ?.map((e) => ErrorData.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => UserModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       data: json['data'] == null
           ? null
-          : UserData.fromJson(json['data'] as Map<String, dynamic>),
+          : UserModel.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SignUpResponseToJson(SignUpResponse instance) =>

@@ -1,10 +1,10 @@
 import 'package:equatable/equatable.dart';
 
-import '../abstractions/validators/field_validator.interface.dart';
-import '../mixins/l10n.mixin.dart';
+import '../abstractions/validators/field_validator_interface.dart';
+import '../mixins/l10n_mixin.dart';
 
 class EmailFieldValidator<T> extends Equatable
-    with l10nMixin
+    with L10nMixin
     implements IFieldValidator<T> {
   bool isValidEmail(String email) {
     final regex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');

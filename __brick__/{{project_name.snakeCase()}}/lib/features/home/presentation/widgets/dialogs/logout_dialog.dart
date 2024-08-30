@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/base/mixins/analytics.mixin.dart';
+import '../../../../../core/base/mixins/analytics_mixin.dart';
 import '../../../../../core/l10n/translation.dart';
-import '../../tag/logout_dialog.tag.dart';
+import '../../tag/logout_dialog_tag.dart';
 
 class LogoutDialog extends StatelessWidget
     with AnalyticsMixin<LogoutDialogTag> {

@@ -1,7 +1,7 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 
-import '../abstractions/custom_exception.interface.dart';
+import '../abstractions/custom_exception_interface.dart';
 
 void showErrorSnackbar({
   required BuildContext context,

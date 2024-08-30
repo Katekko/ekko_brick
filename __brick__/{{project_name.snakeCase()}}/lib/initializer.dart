@@ -5,25 +5,25 @@ import 'package:flutter/widgets.dart';
 import 'package:get_storage/get_storage.dart';
 
 import 'config.dart';
-import 'core/base/abstractions/http_connect.interface.dart';
+import 'core/base/abstractions/http_connect_interface.dart';
 import 'core/base/analytics/analytics_mock.dart';
 import 'core/base/analytics/analytics_provider.dart';
-import 'core/base/constants/storage.constants.dart';
+import 'core/base/constants/storage_constants.dart';
 import 'core/base/crashlytics/crashlytics_mock.dart';
 import 'core/base/crashlytics/crashlytics_provider.dart';
 import 'core/base/dal/storage/getx_storage.dart';
-import 'core/base/dal/storage/storage.interface.dart';
+import 'core/base/dal/storage/storage_interface.dart';
 import 'core/base/inject.dart';
-import 'core/base/models/fb.crashlytics.dart';
-import 'core/base/models/firebase.analytics.dart';
+import 'core/base/models/fb_crashlytics.dart';
+import 'core/base/models/firebase_analytics.dart';
 import 'core/base/models/http_connect.dart';
 import 'core/base/models/token_client.dart';
 import 'core/l10n/en_us.dart';
 import 'core/l10n/pt_br.dart';
 import 'core/l10n/translation.dart';
-import 'core/resources/user/dal/datasource/user.datasource.interface.dart';
-import 'core/resources/user/dal/datasource/user.datasource.mock.dart';
-import 'features/shared/loading/loading.controller.dart';
+import 'core/resources/user/dal/datasource/user_datasource_interface.dart';
+import 'core/resources/user/dal/datasource/user_datasource_mock.dart';
+import 'features/shared/loading/loading_controller.dart';
 
 class Initializer {
   static late final String initialRoute;

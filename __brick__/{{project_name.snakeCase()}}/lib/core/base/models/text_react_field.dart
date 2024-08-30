@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../abstractions/field.interface.dart';
+import '../abstractions/field_interface.dart';
 
-class TextReactFieldModel<T> extends IField<T> {
+class TextReactField<T> extends IField<T> {
   final _valueNotifier = ValueNotifier<T?>(null);
   final _error = ValueNotifier<String?>(null);
 
   var firstTimeAux = true;
   final bool validateOnType;
 
-  TextReactFieldModel({
+  TextReactField({
     T? value,
     required super.validators,
     this.validateOnType = true,
@@ -35,13 +35,13 @@ class TextReactFieldModel<T> extends IField<T> {
   @override
   void onChange(dynamic val) {
     if (val != null && val is String) {
-      if (runtimeType == TextReactFieldModel<double>) {
+      if (runtimeType == TextReactField<double>) {
         dynamic parse;
         final onlyNumber = val.replaceAll(RegExp('[^0-9.]'), '');
         parse = double.tryParse(onlyNumber);
         _valueNotifier.value = parse;
         firstTimeAux = false;
-      } else if (runtimeType == TextReactFieldModel<String>) {
+      } else if (runtimeType == TextReactField<String>) {
         _valueNotifier.value = val as T?;
         if (val != '') {
           firstTimeAux = false;

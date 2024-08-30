@@ -1,13 +1,13 @@
-import '../../../../base/abstractions/http_connect.interface.dart';
-import '../../../../base/exceptions/http_failure.exception.dart';
-import '../../domain/constants/user_errors.constants.dart';
-import '../../domain/exceptions/email_already_in_use.exception.dart';
-import '../../domain/exceptions/user_or_password_incorrect.exception.dart';
-import '../dto/authenticate_user.body.dart';
-import '../dto/authenticate_user.response.dart';
-import '../dto/sign_up.body.dart';
-import '../dto/sign_up.response.dart';
-import 'user.datasource.interface.dart';
+import '../../../../base/abstractions/http_connect_interface.dart';
+import '../../../../base/exceptions/http_failure_exception.dart';
+import '../../domain/constants/user_errors_constants.dart';
+import '../../domain/exceptions/email_already_in_use_exception.dart';
+import '../../domain/exceptions/user_or_password_incorrect_exception.dart';
+import '../dto/authenticate_user_body.dart';
+import '../dto/authenticate_user_response.dart';
+import '../dto/sign_up_body.dart';
+import '../dto/sign_up_response.dart';
+import 'user_datasource_interface.dart';
 
 class UserDatasource implements IUserDatasource {
   final IHttpConnect _connect;

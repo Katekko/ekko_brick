@@ -1,4 +1,4 @@
-import '../../../features/shared/loading/loading.controller.dart';
+import '../../../features/shared/loading/loading_controller.dart';
 import '../inject.dart';
 
 mixin LoadingMixin {

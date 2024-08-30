@@ -2,21 +2,35 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/base/style/colors.dart';
-import '../../../../core/base/utils/snackbar.util.dart';
+import '../../../../core/base/utils/snackbar_util.dart';
 import '../../../../core/navigation/routes.dart';
-import '../../../core/base/mixins/analytics.mixin.dart';
-import '../../../core/base/mixins/controller.mixin.dart';
-import '../../../core/base/mixins/l10n.mixin.dart';
-import '../../../core/resources/user/domain/exceptions/user_or_password_incorrect.exception.dart';
-import '../../shared/loading/loading.widget.dart';
-import '../../shared/primary_button.widget.dart';
-import '../../shared/text_field.widget.dart';
-import 'tag/login.tag.dart';
-import 'login.controller.dart';
+import '../../../core/base/mixins/analytics_mixin.dart';
+import '../../../core/base/mixins/controller_mixin.dart';
+import '../../../core/base/mixins/l10n_mixin.dart';
+import '../../../core/resources/user/domain/exceptions/user_or_password_incorrect_exception.dart';
+import '../../shared/loading/loading_widget.dart';
+import '../../shared/primary_button_widget.dart';
+import '../../shared/text_field_widget.dart';
+import 'tag/login_tag.dart';
+import 'login_controller.dart';
 
 class LoginScreen extends StatelessWidget
-    with ControllerMixin<LoginController>, AnalyticsMixin<LoginTag>, l10nMixin {
+    with ControllerMixin<LoginController>, AnalyticsMixin<LoginTag>, L10nMixin {
   const LoginScreen({super.key});
+
+  void authenticateUser(BuildContext context) async {
+    try {
+      FocusScope.of(context).unfocus();
+      await tag.onLoginButtonClicked(l10n.strings.login.loginButtonLabel);
+      final userId = await controller.authenticateUser();
+      if (userId != null) {
+        await tag.onLoginSucceed(userId);
+        if (context.mounted) context.goNamed(Routes.home);
+      }
+    } on UserOrPasswordIncorrectException catch (err) {
+      if (context.mounted) showErrorSnackbar(context: context, err: err);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,19 +105,5 @@ class LoginScreen extends StatelessWidget
         ),
       ),
     );
-  }
-
-  void authenticateUser(BuildContext context) async {
-    try {
-      FocusScope.of(context).unfocus();
-      await tag.onLoginButtonClicked(l10n.strings.login.loginButtonLabel);
-      final userId = await controller.authenticateUser();
-      if (userId != null) {
-        await tag.onLoginSucceed(userId);
-        if (context.mounted) context.goNamed(Routes.home);
-      }
-    } on UserOrPasswordIncorrectException catch (err) {
-      if (context.mounted) showErrorSnackbar(context: context, err: err);
-    }
   }
 }

@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../core/base/abstractions/field.interface.dart';
-import '../../core/base/validators/password_field.validator.dart';
+import '../../core/base/abstractions/field_interface.dart';
+import '../../core/base/validators/password_field_validator.dart';
 
 class TextFieldWidget extends StatefulWidget {
-  final String label;
-  final IField field;
-  final bool useLabelAsHint;
-  final bool onlyNumber;
-
   const TextFieldWidget({
     required this.label,
     required this.field,
@@ -17,6 +12,11 @@ class TextFieldWidget extends StatefulWidget {
     this.useLabelAsHint = false,
     this.onlyNumber = false,
   });
+
+  final String label;
+  final IField field;
+  final bool useLabelAsHint;
+  final bool onlyNumber;
 
   @override
   State<TextFieldWidget> createState() => _TextFieldWidgetState();

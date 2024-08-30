@@ -1,14 +1,14 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../../../base/dal/data/error.data.dart';
-import '../data/user.data.dart';
+import '../../../../base/dal/data/error_model.dart';
+import '../data/user_model.dart';
 
-part 'sign_up.response.g.dart';
+part 'sign_up_response.g.dart';
 
 @JsonSerializable()
 class SignUpResponse {
-  final UserData? data;
-  final List<ErrorData>? errors;
+  final UserModel? data;
+  final List<ErrorModel>? errors;
   const SignUpResponse({required this.errors, required this.data});
 
   factory SignUpResponse.fromJson(Map<String, dynamic> json) =>

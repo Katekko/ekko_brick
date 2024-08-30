@@ -1,7 +1,7 @@
-import '../abstractions/validators/field_validator.interface.dart';
-import '../validators/email_field.validator.dart';
-import '../validators/password_field.validator.dart';
-import '../validators/required_field.validator.dart';
+import '../abstractions/validators/field_validator_interface.dart';
+import '../validators/email_field_validator.dart';
+import '../validators/password_field_validator.dart';
+import '../validators/required_field_validator.dart';
 
 class FieldValidatorBuilder<T> {
   final List<IFieldValidator<T>> _validators = [];

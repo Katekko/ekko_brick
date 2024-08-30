@@ -1,6 +1,6 @@
-import '../dto/authenticate_user.body.dart';
-import '../dto/authenticate_user.response.dart';
-import '../dto/sign_up.body.dart';
+import '../dto/authenticate_user_body.dart';
+import '../dto/authenticate_user_response.dart';
+import '../dto/sign_up_body.dart';
 
 abstract class IUserDatasource {
   Future<AuthenticateUserDataResponse> authenticateUser(

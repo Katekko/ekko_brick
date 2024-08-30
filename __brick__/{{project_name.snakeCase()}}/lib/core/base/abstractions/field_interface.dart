@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'validators/validator.interface.dart';
+import 'validators/validator_interface.dart';
 
 abstract class IField<T> extends IValidator<T> {
   ValueNotifier<T?> get valueNotifier;

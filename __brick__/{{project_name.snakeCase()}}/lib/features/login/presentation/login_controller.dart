@@ -1,17 +1,17 @@
-import '../../../../core/base/abstractions/field.interface.dart';
-import '../../../core/base/abstractions/controller.interface.dart';
-import '../usecases/authenticate_user.usecase.dart';
+import '../../../../core/base/abstractions/field_interface.dart';
+import '../../../core/base/abstractions/controller_interface.dart';
+import '../usecases/authenticate_user_usecase.dart';
 
 class LoginController extends IController {
-  final AuthenticateUserUsecase _authenticateUserUsecase;
-  final IField<String> loginField;
-  final IField<String> passwordField;
-
   LoginController({
     required this.loginField,
     required this.passwordField,
     required AuthenticateUserUsecase authenticateUserUsecase,
   }) : _authenticateUserUsecase = authenticateUserUsecase;
+
+  final AuthenticateUserUsecase _authenticateUserUsecase;
+  final IField<String> loginField;
+  final IField<String> passwordField;
 
   Future<String?> authenticateUser() async {
     try {

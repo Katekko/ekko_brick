@@ -1,10 +1,10 @@
 import 'package:equatable/equatable.dart';
 
-import '../abstractions/validators/field_validator.interface.dart';
-import '../mixins/l10n.mixin.dart';
+import '../abstractions/validators/field_validator_interface.dart';
+import '../mixins/l10n_mixin.dart';
 
 class PasswordFieldValidator<T> extends Equatable
-    with l10nMixin
+    with L10nMixin
     implements IFieldValidator<T> {
   @override
   String? validate(T? value) {

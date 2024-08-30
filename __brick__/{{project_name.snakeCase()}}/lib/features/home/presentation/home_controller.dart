@@ -1,5 +1,5 @@
-import '../../../core/base/abstractions/controller.interface.dart';
-import '../usecases/logout.usecase.dart';
+import '../../../core/base/abstractions/controller_interface.dart';
+import '../usecases/logout_usecase.dart';
 
 class HomeController extends IController {
   final LogoutUsecase logoutUsecase;

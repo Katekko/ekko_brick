@@ -1,11 +1,11 @@
-import '../../../base/dal/storage/storage.interface.dart';
-import '../domain/constants/user_storage.constants.dart';
-import '../domain/entities/user.entity.dart';
-import 'datasource/user.datasource.interface.dart';
-import 'dto/authenticate_user.body.dart';
-import 'dto/sign_up.body.dart';
-import 'mappers/user.mapper.dart';
-import 'mappers/user_data.mapper.dart';
+import '../../../base/dal/storage/storage_interface.dart';
+import '../domain/constants/user_storage_constants.dart';
+import '../domain/entities/user_entity.dart';
+import '../domain/mappers/user_mapper.dart';
+import '../domain/mappers/user_model_mapper.dart';
+import 'datasource/user_datasource_interface.dart';
+import 'dto/authenticate_user_body.dart';
+import 'dto/sign_up_body.dart';
 
 class UserRepository {
   final IUserDatasource userDatasource;

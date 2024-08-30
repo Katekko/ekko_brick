@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'sign_up.body.g.dart';
+part 'sign_up_body.g.dart';
 
 @JsonSerializable()
 class SignUpBody extends Equatable {

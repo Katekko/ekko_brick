@@ -4,9 +4,9 @@ import 'dart:developer' as developer;
 import 'package:http/http.dart' as http;
 
 import '../../../config.dart';
-import '../abstractions/http_connect.interface.dart';
-import '../abstractions/response.model.dart';
-import '../exceptions/http_failure.exception.dart';
+import '../abstractions/http_connect_interface.dart';
+import '../abstractions/response_model.dart';
+import '../exceptions/http_failure_exception.dart';
 
 class HttpConnect implements IHttpConnect {
   final http.Client _client;

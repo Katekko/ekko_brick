@@ -1,4 +1,4 @@
-import '../../../core/resources/user/dal/user.repository.dart';
+import '../../../core/resources/user/dal/user_repository.dart';
 
 class LogoutUsecase {
   final UserRepository userRepository;

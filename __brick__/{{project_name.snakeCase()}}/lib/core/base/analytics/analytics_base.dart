@@ -1,5 +1,5 @@
 import 'analytics_provider.dart';
-import '../mixins/send_event.mixin.dart';
+import '../mixins/send_event_mixin.dart';
 
 abstract class AnalyticsBase with SendEventMixin {
   final AnalyticsProvider analyticsProvider;

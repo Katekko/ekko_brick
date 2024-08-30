@@ -1,15 +1,15 @@
 import 'package:flutter/foundation.dart';
 
-import '../abstractions/field.interface.dart';
+import '../abstractions/field_interface.dart';
 
-class ReactFieldModel<T> extends IField<T> {
+class ReactField<T> extends IField<T> {
   final _valueNotifier = ValueNotifier<T?>(null);
   final _error = ValueNotifier<String?>(null);
 
   var firstTimeAux = true;
   final bool validateOnType;
 
-  ReactFieldModel({
+  ReactField({
     T? value,
     required super.validators,
     this.validateOnType = true,

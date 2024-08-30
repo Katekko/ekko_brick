@@ -1,9 +1,9 @@
 import '../../../core/base/inject.dart';
-import '../../../core/resources/user/dal/user.repository.dart';
-import '../presentation/home.controller.dart';
-import '../presentation/tag/home.tag.dart';
-import '../presentation/tag/logout_dialog.tag.dart';
-import '../usecases/logout.usecase.dart';
+import '../../../core/resources/user/dal/user_repository.dart';
+import '../presentation/home_controller.dart';
+import '../presentation/tag/home_tag.dart';
+import '../presentation/tag/logout_dialog_tag.dart';
+import '../usecases/logout_usecase.dart';
 
 class HomeControllerBinding {
   static void inject() {
