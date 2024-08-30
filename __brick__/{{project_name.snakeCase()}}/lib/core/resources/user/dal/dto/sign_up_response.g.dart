@@ -9,7 +9,7 @@ part of 'sign_up_response.dart';
 SignUpResponse _$SignUpResponseFromJson(Map<String, dynamic> json) =>
     SignUpResponse(
       errors: (json['errors'] as List<dynamic>?)
-          ?.map((e) => UserModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ErrorModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       data: json['data'] == null
           ? null

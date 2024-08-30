@@ -14,7 +14,7 @@ AuthenticateUserResponse _$AuthenticateUserResponseFromJson(
           : AuthenticateUserDataResponse.fromJson(
               json['data'] as Map<String, dynamic>),
       errors: (json['errors'] as List<dynamic>?)
-          ?.map((e) => ErrorData.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ErrorModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -28,7 +28,7 @@ Map<String, dynamic> _$AuthenticateUserResponseToJson(
 AuthenticateUserDataResponse _$AuthenticateUserDataResponseFromJson(
         Map<String, dynamic> json) =>
     AuthenticateUserDataResponse(
-      user: UserData.fromJson(json['user'] as Map<String, dynamic>),
+      user: UserModel.fromJson(json['user'] as Map<String, dynamic>),
       token: json['token'] as String,
     );
 

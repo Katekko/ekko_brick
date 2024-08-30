@@ -1,4 +1,4 @@
 {
-  "flutterSdkVersion": "{{project_version}}",
+  "flutter": "{{project_version}}",
   "flavors": {}
 }
